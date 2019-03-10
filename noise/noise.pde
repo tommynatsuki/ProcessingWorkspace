@@ -11,7 +11,7 @@ float noiseScale = 0.0;
 int step = 20;
 
 void setup(){
-  size(800, 800, P2D);
+  size(800, 1000, P2D);
   frameRate(120);
   blendMode(BLEND); 
   osc = new OscP5(this, 7000);
@@ -22,7 +22,7 @@ void draw(){
   noiseScale = 0.001 * speed;
   for(int j = - height; j < height * 2; j += step){
     beginShape();
-    for(int i = 0; i < width; i += step){
+    for(int i = -20; i < width * 1.5; i += step){
       float noise = noise(i * noiseScale, j * noiseScale) * strength;
       stroke(200);
       noFill();
